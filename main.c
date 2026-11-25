@@ -1,9 +1,15 @@
 #include <stdio.h>
 #include "util.h"
+#include "matricula.h"
 
 int main()
 {
+    int total_alunos = 0;
+
+
     int opcao = -1;
+
+    
 
     do
     {
@@ -17,11 +23,14 @@ int main()
         switch (opcao)
         {
         case 1:
-            limpar_tela();
+            matricular_aluno();
             
-            pausar();
+           
             break;
-        
+        case 2:
+            
+
+            break;
         default:
             break;
         }

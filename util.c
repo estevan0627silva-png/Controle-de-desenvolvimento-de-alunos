@@ -15,3 +15,12 @@ void pausar(void) {
     printf("\nPressione ENTER para continuar...");
     getchar();
 }
+
+void remover_quebra_linha(char texto[]) {
+    for (int i = 0; texto[i] != '\0'; i++) {
+        if (texto[i] == '\n') {
+            texto[i] = '\0';
+            break;
+        }
+    }
+}
