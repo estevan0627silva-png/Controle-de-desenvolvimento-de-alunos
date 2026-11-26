@@ -36,8 +36,15 @@ int main()
 
         case 2:
             file = fopen("Alunos.txt", "rb");
-            Matricula listar_matriculas(FILE *file);
+            if (file == NULL)
+            {
+                printf("Nenhuma matricula encontrada (arquivo inexistente).\n");
+                pausar();
+                break;
+            }
+            listar_matriculas(file);
             fclose(file);
+            break;
 
         default:
             break;

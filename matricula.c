@@ -27,18 +27,17 @@ Matricula matricular_aluno(){
     return  matricular;
 }
 
-Matricula listar_matriculas(FILE *y){
+void listar_matriculas(FILE *y){
     Matricula matricular;
+    limpar_tela();
     while(fread(&matricular,sizeof(matricular),1,y)==1){
         
-        printf("\nNumero de matricula N-%02d ",matricular.id);
         printf("\n%s",matricular.nome);
-        printf("Idade:%02d",matricular.idade);
+        printf("\nMatricula N-%02d ",matricular.id);
+        printf("\nIdade:%02d",matricular.idade);
+        printf("\n\n");
     }
+    pausar();
 
-
-
-
-
-    return matricular;
+  
 }
