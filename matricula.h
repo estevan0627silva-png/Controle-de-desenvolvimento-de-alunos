@@ -4,12 +4,12 @@
 
 typedef struct 
 {
-   int matricula;
-   char nome[60];
+   int id;
+   char nome[50];
    int idade;
 
-}matricula;
+}Matricula;
 
-void matricular_aluno(matricula turma[], int *total_alunos );
+Matricula matricular_aluno();
 
 #endif

@@ -4,19 +4,23 @@
 #include "matricula.h"
 
 
-void matricular_aluno(matricula turma[], int *total_alunos ){
-
-    
+Matricula matricular_aluno(){
+    Matricula matricular;
+    static int id;
+    id++;
+    matricular.id = id;
     limpar_tela();
-    printf("Matricula: N-%0.2d",turma[*total_alunos].matricula++ );
+    printf("\nMatricula N-%2d",matricular.id);
 
-    printf("Nome: ");
-    fgets(turma[*total_alunos].nome, sizeof(turma[*total_alunos].nome), stdin);
-    remover_quebra_linha(turma[*total_alunos].nome);
+    printf("\nNome do Aluno: ");
+    scanf(" %49[^\n]",matricular.nome);
+    limpar_buffer();
 
-    printf("Idade: ");
-    scanf("%d",&turma[*total_alunos].idade)
+    printf("\nIdade do Aluno ");
+    scanf("%d",&matricular.idade);
+    limpar_buffer();
 
-    
+    pausar();
 
+    return  matricular;
 }
