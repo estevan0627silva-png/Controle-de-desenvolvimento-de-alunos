@@ -11,5 +11,6 @@ typedef struct
 }Matricula;
 
 Matricula matricular_aluno();
+Matricula listar_matriculas(FILE *y);
 
 #endif

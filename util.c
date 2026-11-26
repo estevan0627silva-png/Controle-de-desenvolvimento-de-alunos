@@ -24,3 +24,6 @@ void remover_quebra_linha(char texto[]) {
         }
     }
 }
+
+
+
