@@ -10,7 +10,17 @@ typedef struct
 
 }Matricula;
 
-Matricula matricular_aluno();
-void listar_matriculas(FILE *y);
+typedef struct  
+{
+  Matricula aluno;
+
+
+}Turmas;
+
+
+void matricular_aluno();
+void listar_matriculas();
+int gerar_id();
+void listar_turmas();
 
 #endif

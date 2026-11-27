@@ -5,14 +5,14 @@
 int main()
 {
     int opcao;
-    FILE *file;
-    Matricula matricular;
+
 
     do
     {
         limpar_tela();
         printf("1 - Matricular\n");
-        printf("2 - Listar Turmas\n");
+        printf("2 - Listar Alunos\n");
+        printf("3 - Listar Turmas\n");
         printf("0 - Fechar\n");
         scanf("%d", &opcao);
         limpar_buffer();
@@ -20,31 +20,22 @@ int main()
         switch (opcao)
         {
         case 1:
-            file = fopen("Alunos.txt", "ab");
-
-            if (file == NULL)
-            {
-                printf("ERRO AO CARREGAR ARQUIVO!");
-                return (1);
-            }
-
-            matricular = matricular_aluno();
-            fwrite(&matricular, sizeof(matricular), 1, file);
-            fclose(file);
-
+          
+           matricular_aluno();
+          
             break;
 
         case 2:
-            file = fopen("Alunos.txt", "rb");
-            if (file == NULL)
-            {
-                printf("Nenhuma matricula encontrada (arquivo inexistente).\n");
-                pausar();
-                break;
-            }
-            listar_matriculas(file);
-            fclose(file);
+            
+            listar_matriculas();
+            
             break;
+        
+        case 3:
+
+            listar_turmas();
+
+        break;
 
         default:
             break;
